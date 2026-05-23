@@ -124,3 +124,5 @@ uploaded_files = st.file_uploader(
 for uploaded_file in uploaded_files:
     df = pd.read_PDF(uploaded_file)
     st.write(df)
+st.pdf("https://example.com/sample.pdf")
+st.pdf("https://example.com/sample.pdf", height=600)
