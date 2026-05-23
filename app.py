@@ -1,9 +1,10 @@
 import streamlit as st
 
 st.set_page_config(
-  page_title="Silver Expert",
+  page_title="Kuliah Praktisi 2305",
   page_icon="🧊",
-  layout="centered"
+  layout="centered",
+  initial_sidebar_state="expanded"
 )
 
 # Hirarki teks
@@ -11,53 +12,17 @@ st.title("📊 Dashboard")
 st.header("Laporan Bulanan")
 st.subheader("📈 Monthly Expenses")
 st.caption("Made with ❤️ using Streamlit")
-st.write("Hello, *World!* :sunglasses:")
-title = st.text_input("Movie title", "Avengers End Game")
-st.write("The current movie title is", title)
-import streamlit as st
+st.write("Hello, *World!* 😁")
 
-st.button("Reset", type="primary")
+title = st.text_input("Movie title", "Life of Brian")
+st.write("The current movie title is", title)
+
 if st.button("Say hello"):
     st.write("Why hello there")
 else:
     st.write("Goodbye")
 
-if st.button("Aloha", type="tertiary"):
-    st.write("Ciao")
-import streamlit as st
-
-left, middle, right = st.columns(3)
-if left.button("Plain button", width="stretch"):
-    left.markdown("You clicked the plain button.")
-if middle.button("Emoji button", icon="😃", width="stretch"):
-    middle.markdown("You clicked the emoji button.")
-if right.button("Material button", icon=":material/mood:", width="stretch"):
-    right.markdown("You clicked the Material button.")
-import streamlit as st
-
-genre = st.radio(
-    "What's your favorite movie genre",
-    [":rainbow[Comedy]", "***Drama***", "Documentary :movie_camera:"],
-    captions=[
-        "Laugh out loud.",
-        "Get the popcorn.",
-        "Never stop learning.",
-    ],
-)
-
-if genre == ":rainbow[Comedy]":
-    st.write("You selected comedy.")
-else:
-    st.write("You didn't select comedy.")
-import streamlit as st
-
-option = st.selectbox(
-    "How would you like to be contacted?",
-    ("Email", "Home phone", "Mobile phone"),
-)
-
-st.write("You selected:", option)
-import streamlit as st
+st.button("Reset", type="primary")
 
 col1, col2, col3 = st.columns(3)
 
@@ -72,16 +37,13 @@ with col2:
 with col3:
     st.header("An owl")
     st.image("https://static.streamlit.io/examples/owl.jpg")
-import streamlit as st
-from numpy.random import default_rng as rng
 
-df = rng(0).standard_normal((10, 1))
-col1, col2 = st.columns([3, 1])
+st.bar_chart({"data": [1, 5, 2, 6, 2, 1]})
 
-col1.subheader("A wide column with a chart")
-col1.line_chart(df)
-
-col2.subheader("A narrow column with the data")
-col2.write(df)
-import streamlit as st
-
+with st.expander("See explanation"):
+    st.write('''
+        The chart above shows some numbers I picked for you.
+        I rolled actual dice for these, so they're *guaranteed* to
+        be random.
+    ''')
+    st.image("https://static.streamlit.io/examples/dice.jpg")
