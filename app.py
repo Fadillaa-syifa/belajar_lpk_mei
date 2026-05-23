@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(
-  page_title="Finance Dashboard",
+  page_title="Silver Expert",
   layout="wide"
 )
 
